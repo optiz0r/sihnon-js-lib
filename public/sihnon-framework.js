@@ -461,6 +461,10 @@ var sf = {
          */
         callbacks: {
             
+            'close-dialog': function(params) {
+                sf.ui.dialog.close();
+            },
+            
         },
         
         /**
