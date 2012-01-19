@@ -35,7 +35,7 @@ var sf = {
         ];
         
         for (var module in modules) {
-            sf[module].init();
+            sf[modules[module]].init();
         }
         
     },
@@ -182,7 +182,7 @@ var sf = {
              */
             init: function() {
                 // Permanently configure the X to close the dialog
-                $("#dialog-header-close").click(sf.dialog.close);
+                $("#dialog-header-close").click(sf.ui.dialog.close);
             },
             
             /**
@@ -365,8 +365,7 @@ var sf = {
          * Initialise module
          */
         init: function() {
-            // Update the content of the page on first load
-            sf.page.updateEvents($('#page_content'));
+            
         },
         
         /**
@@ -482,16 +481,15 @@ var sf = {
          * 
          * @param names Names of the action(s) to execute
          * @param params Object containing action specific parameters
-         * @returns bool
          */
         trigger: function(names, params) {
-            if ( ! names instanceof Array) {
+            if ( ! (names instanceof Array)) {
                 names = [names];
             }
             
             for (var name in names) {
-                if (sf.actions.callbacks[name]) {
-                    return sf.actions.callbacks[name](params);
+                if (sf.actions.callbacks[names[name]]) {
+                    sf.actions.callbacks[names[name]](params);
                 }
             }
         },
