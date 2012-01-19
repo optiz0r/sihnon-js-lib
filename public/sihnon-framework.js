@@ -534,4 +534,4 @@ var sf = {
 };
 
 // Execute the initialisation code as soon as the DOM is ready.
-$('document').ready(sb.init);
+$('document').ready(sf.init);
