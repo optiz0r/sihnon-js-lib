@@ -18,6 +18,12 @@
  * Entry point for all base framework code
  */
 var sf = {
+
+    /**
+     * Library version
+     *
+     */
+    version: '0.1.0',
    
     /**
      * Initialises the library
@@ -461,6 +467,10 @@ var sf = {
          */
         callbacks: {
             
+            'close-dialog': function(params) {
+                sf.ui.dialog.close();
+            },
+            
         },
         
         /**
@@ -534,4 +544,4 @@ var sf = {
 };
 
 // Execute the initialisation code as soon as the DOM is ready.
-$('document').ready(sb.init);
+$('document').ready(sf.init);
