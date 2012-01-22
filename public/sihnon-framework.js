@@ -18,6 +18,12 @@
  * Entry point for all base framework code
  */
 var sf = {
+
+    /**
+     * Library version
+     *
+     */
+    version: '0.1.0',
    
     /**
      * Initialises the library
