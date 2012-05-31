@@ -177,6 +177,7 @@ var sf = {
         init: function() {
             sf.ui.dialog.init();
             sf.ui.selectall.init();
+            sf.ui.collapse.init();
         },
         
         /**
@@ -372,6 +373,31 @@ var sf = {
                 } else if (children.not(':checked').length == 0) {
                     parent.attr('checked', true);
                 }
+            },
+        },
+                
+        /**
+         * Submodule for handling collapseable blocks with chevrons
+         */
+        collapse: {
+            init: function() {
+                $('a[data-toggle="collapse"]').each(function() {
+                    $($(this).data('target'))
+                        .on('show', { icon: $('i', this) }, sf.ui.collapse.show)
+                        .on('hide', { icon: $('i', this) }, sf.ui.collapse.hide);
+                });
+            },
+            
+            show: function(e) {
+                $(e.data.icon)
+                    .removeClass('icon-chevron-right')
+                    .addClass('icon-chevron-down');
+            },
+            
+            hide: function(e) {
+                $(e.data.icon)
+                    .removeClass('icon-chevron-down')
+                    .addClass('icon-chevron-right');
             },
         },
     },
