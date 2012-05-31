@@ -346,34 +346,34 @@ var sf = {
         /**
         * Submodule for handling select-all checkbox groups
         */
-    selectall: {
-        init: function() {
-        // Enable select all/none for checkboxes
-        $('input[type=checkbox].select-all').click(sf.ui.selectall.updateChildren);
-        
-        // Enable update of the select-all checkbox as the children are manually changed
-        $('input[type=checkbox].select-all').each(function() {
-            $('input[type=checkbox][data-select-all="' + $(this).attr('id') + '"]').click(sf.ui.selectall.updateParent);
-        });
-        },
-        
-        updateChildren: function(parent_id, children) {
-        $('input[type=checkbox][data-select-all="'+$(this).attr('id')+'"]')
-            .attr('checked', $(this).attr('checked') == 'checked')
-            .trigger('change');
-        },
+        selectall: {
+            init: function() {
+                // Enable select all/none for checkboxes
+                $('input[type=checkbox].select-all').click(sf.ui.selectall.updateChildren);
+                
+                // Enable update of the select-all checkbox as the children are manually changed
+                $('input[type=checkbox].select-all').each(function() {
+                    $('input[type=checkbox][data-select-all="' + $(this).attr('id') + '"]').click(sf.ui.selectall.updateParent);
+                });
+            },
+            
+            updateChildren: function(parent_id, children) {
+            $('input[type=checkbox][data-select-all="'+$(this).attr('id')+'"]')
+                .attr('checked', $(this).attr('checked') == 'checked')
+                .trigger('change');
+            },
 
-        updateParent: function() {
-        var parent = $('#' + $(this).attr('data-select-all'));
-        var children = $('input[type=checkbox][data-select-all="' + parent.attr('id') + '"]');
+            updateParent: function() {
+                var parent = $('#' + $(this).attr('data-select-all'));
+                var children = $('input[type=checkbox][data-select-all="' + parent.attr('id') + '"]');
 
-        if (children.filter(':checked').length != children.length) {
-            parent.attr('checked', false);
-        } else if (children.not(':checked').length == 0) {
-            parent.attr('checked', true);
-        }
+                if (children.filter(':checked').length != children.length) {
+                    parent.attr('checked', false);
+                } else if (children.not(':checked').length == 0) {
+                    parent.attr('checked', true);
+                }
+            },
         },
-    },
     },
     
     /**
