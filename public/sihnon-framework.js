@@ -340,9 +340,8 @@ var sf = {
                         }
                     }
                 });
-            }
-            
-        }
+            }  
+        },
 
         /**
         * Submodule for handling select-all checkbox groups
@@ -497,9 +496,9 @@ var sf = {
             if (sf.page.update_callback[name]) {
                 delete sf.page.update_callbacks[name];
             }
-        },
+        }
         
-    }
+    },
     
     /**
     * Actions module
@@ -527,9 +526,9 @@ var sf = {
             
             'close-dialog': function(params) {
                 sf.ui.dialog.close();
-            },
+            }
             
-        }
+        },
         
         /**
         * Initialise the module
