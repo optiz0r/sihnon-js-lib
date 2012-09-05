@@ -73,7 +73,7 @@ var sf = {
             } else {
                 return alternative;
             }
-        },
+        }
         
     },
     
@@ -160,7 +160,7 @@ var sf = {
         failure: function(x, s, e) {
             console.log("Ajax Failure: " + s, e);
             console.log(x.responseText);
-        },
+        }
         
     },
     
@@ -342,7 +342,7 @@ var sf = {
                 });
             },
             
-        },
+        }
 
         /**
         * Submodule for handling select-all checkbox groups
@@ -499,7 +499,7 @@ var sf = {
             }
         },
         
-    },
+    }
     
     /**
     * Actions module
@@ -529,7 +529,7 @@ var sf = {
                 sf.ui.dialog.close();
             },
             
-        },
+        }
         
         /**
         * Initialise the module
@@ -595,7 +595,7 @@ var sf = {
                 delete sf.actions.callbacks[name];
             }
         }
-    },
+    }
 
     
 };
