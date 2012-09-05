@@ -37,7 +37,7 @@ var sf = {
             'ajax',
             'ui',
             'page',
-            'actions',
+            'actions'
         ];
         
         for (var module in modules) {
