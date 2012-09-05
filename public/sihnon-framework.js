@@ -107,7 +107,7 @@ var sf = {
                 type: "GET", 
                 dataType: "json",
                 success: sf.utility.orelse(success, sf.ajax.success), 
-                error: sf.utility.orelse(failure, sf.ajax.failure),
+                error: sf.utility.orelse(failure, sf.ajax.failure)
             });
         },
         
@@ -131,7 +131,7 @@ var sf = {
                 dataType: "json",
                 data: data,
                 success: sf.utility.orelse(success, sf.ajax.success), 
-                error: sf.utility.orelse(failure, sf.ajax.failure),
+                error: sf.utility.orelse(failure, sf.ajax.failure)
             });            
         },
         
@@ -281,7 +281,7 @@ var sf = {
                 $("#dialog").modal({
                     show: true,
                     backdrop: true,
-                    keyboard: true,
+                    keyboard: true
                 });
             },
             
@@ -295,7 +295,7 @@ var sf = {
             close: function() {
                 // Hide the dialog
                 $("#dialog").modal({
-                    show: false,
+                    show: false
                 });
                 
                 // Remove the dialog content
@@ -373,7 +373,7 @@ var sf = {
                 } else if (children.not(':checked').length == 0) {
                     parent.attr('checked', true);
                 }
-            },
+            }
         },
                 
         /**
@@ -398,8 +398,8 @@ var sf = {
                 $(e.data.icon)
                     .removeClass('icon-chevron-down')
                     .addClass('icon-chevron-right');
-            },
-        },
+            }
+        }
     },
     
     /**
@@ -594,7 +594,7 @@ var sf = {
             if (sf.actions.callbacks[name]) {
                 delete sf.actions.callbacks[name];
             }
-        },
+        }
     },
 
     
