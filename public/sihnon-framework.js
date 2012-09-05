@@ -40,8 +40,8 @@ var sf = {
             'actions'
         ];
         
-        for (var module in modules) {
-            sf[modules[module]].init();
+        for (var i = 0; i < modules.length; ++i) {
+            sf[modules[i]].init();
         }
         
     },
