@@ -223,7 +223,7 @@ var sf = {
                 if ( ! p) {
                     return;
                 }
-                    
+                
                 if (p.buttons) {
                     switch (p.buttons.type) {
                     case 'ok':
@@ -293,9 +293,7 @@ var sf = {
             */
             close: function() {
                 // Hide the dialog
-                $("#dialog").modal({
-                    show: false,
-                });
+                $("#dialog").modal('hide');
                 
                 // Remove the dialog content
                 $("#dialog-body").html('');
